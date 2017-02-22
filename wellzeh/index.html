@@ -8,6 +8,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/old-standard" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 </head>
 <style>
   body{
@@ -36,8 +38,20 @@ h4 {
   .jumbotron {
     font-family: Montserrat, sans-serif;
     /*font-family: 'OldStandardItalic';*/
-    background-color: #7CCD7C;
-    color: #fff;
+    /*background-color: #7CCD7C;*/
+    color: #FFF;
+    padding: 100px 25px;
+    position: relative;
+    background: #000 url("./images/background04.jpg") center center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    opacity: 0.7;
+  }
+  .welcome{
+    font-family: Montserrat, sans-serif;
+    color: #FFF;
     padding: 100px 25px;
   }
   .container-fluid{
@@ -149,9 +163,11 @@ footer .glyphicon {
 
 <div id="oben" class="jumbotron text-center">
   <!--<img class="img-opt-background"src="./images/background01.jpg">-->
+  <div id="welcome" class="container">
   <h1>Willkommen bei Wellzeh!</h1>
   <p>Der Zweig und Asthalter, das neue System für Dekorationselemente,
 Weihnachtsbäume, Vogelkäfige und Volieren!</p>
+  </div>
 </div>
 
 <div id="ueberuns" class="container-fluid text-center bg-grey">
