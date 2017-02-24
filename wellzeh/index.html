@@ -12,6 +12,31 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 </head>
 <style>
+  .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #7CCD7C;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+  }
+
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #7CCD7C !important;
+      background-color: #fff !important;
+  }
+
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
   body{
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
@@ -26,15 +51,15 @@
     color: #303030;
     font-weight: 600;
     margin-bottom: 30px;
-}
+  }
 
-h4 {
+  h4 {
     font-size: 19px;
     line-height: 1.375em;
     color: #303030;
     font-weight: 400;
     margin-bottom: 30px;
-}
+  }
   .jumbotron {
     font-family: Montserrat, sans-serif;
     /*font-family: 'OldStandardItalic';*/
@@ -48,6 +73,7 @@ h4 {
     background-size: cover;
     overflow: hidden;
     opacity: 0.7;
+    margin:auto;
   }
   .welcome{
     font-family: Montserrat, sans-serif;
@@ -63,55 +89,30 @@ h4 {
   .carousel-control.right, .carousel-control.left {
     background-image: none;
     color: #7CCD7C;
-}
+  }
 
-.carousel-indicators li {
+  .carousel-indicators li {
     border-color: #7CCD7C;
-}
+  }
 
-.carousel-indicators li.active {
+  .carousel-indicators li.active {
     background-color: #7CCD7C;
-}
+  }
 
-.item h4 {
+  .item h4 {
     font-size: 19px;
     line-height: 1.375em;
     font-weight: 400;
     font-style: italic;
     margin: 70px 0;
-}
+  }
 
-.item span {
+  .item span {
     font-style: normal;
-}
+  }
 
 .b-color {
   color: #7CCD7C;
-}
-.navbar {
-    font-family: Montserrat, sans-serif;
-    margin-bottom: 0;
-    background-color: #7CCD7C;
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 4px;
-    border-radius: 0;
-}
-
-.navbar li a, .navbar .navbar-brand {
-    color: #fff !important;
-}
-
-.navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #7CCD7C !important;
-    background-color: #fff !important;
-}
-
-.navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
 }
 .img-radius{
   border-radius: 50%;
