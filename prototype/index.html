@@ -15,50 +15,145 @@
     <title>Prototype</title>
   </head>
   <style>
-    body{
-      /*background-color: #FFFFFF;*/
-    }
     .jumbotron {
-      background-color: #ff8000;
+      background-color: #5fc9f8;
       padding: 50px 50px;
       position: relative;
       margin: auto;
-      background:
+      height: 100vh;
 
     }
     .container-fluid{
       background: #FFFFFF;
-      padding: 60px 50px;
+      /*padding: 60px 50px;*/
       margin:auto;
       /*border-bottom: 1px solid black;*/
     }
+    .container-fh{
+      height: 100vh;
+    }
     h2{
       font-family: old-standard;
-      font-weight: bold;
     }
     h4{
       font-family: old-standard;
       font-style: oblique;
     }
+    .navbar{
+      margin:auto;
+      margin-bottom: 0px;
+      font-family: old-standard;
+    }
+    .logo{
+      font-size: 15px;
+    }
+    .nav-bgcolor{
+      background-color: #e8eded;
+    }
+    .navbar li a, .navbar .navbar-brand {
+        color: #111111 !important;
+    }
+
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+        color: #111111 !important;
+        background-color: #e8eded !important;
+    }
+    .bg-grey{
+      background-color: #e8eded;
+    }
+    .bg-white{
+      background-color: #fff;
+    }
+    .btn{
+      background-color: transparent;
+      border-width: 0px;
+    }
+    .carousel-control.left, .carousel-control.right{
+      background-color: transparent;
+      background-image: none
+    }
+    .aboutus{
+      padding: 125px 125px;
+    }
   </style>
-    <body>
-    <div class="jumbotron text-center">
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid nav-bgcolor">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu" onclick="">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Prototype</a>
+        </div>
+        <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#aboutus">Über uns</a></li>
+          <li><a href="#Leistungen">Leistungen</a></li>
+          <li><a href="#Partner">Partner</a></li>
+          <li><a href="#Fernwartung">Fernwartung</a></li>
+          <li><a href="#Kontakt">Kontakt</a></li>
+          <li><a href="#Impressum">Impressum</a></li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+    <div id="home" class="jumbotron text-center">
       <h2>Jumbotron!</h2>
     </div>
-    <div id="AboutUs" class="container-fluid obg text-center">
-      <h2>Über uns</h2>
-      <h4>ProToTypIng</h4>
+    <div id="aboutus" class="container-fluid text-center bg-grey aboutus container-fh">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <h2>Vorstellung</h2>
+          </div>
+          <div class="item">
+            <h2>Themen</h2>
+          </div>
+          <div class="item">
+            <h2>Text</h2>
+          </div>
+          <div class="item">
+            <h2>Text/Bild</h2>
+          </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-chevron-down logo"></span></a></button>
     </div>
-    <div id="Service" class="container-fluid text-center">
-      <h2>Service/Leistungen</h2>
-      <h4>Wir bieten folgenden Service ...</h4>
+    <div id="Leistungen" class="container-fluid text-center bg-white container-fh">
+      <h2>Leistungen<h2>
+        <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-chevron-down logo"></span></a></button>
     </div>
-    <div id="Support" class="container-fluid text-center">
+    <div id="Support" class="container-fluid text-center bg-grey container-fh">
       <h2>Support ...</h2>
+      <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-chevron-down logo"></span></a></button>
     </div>
-    <div id="Kontakt" class="container-fluid text center">
+    <div id="Kontakt" class="container-fluid text-center bg-white container-fh">
+      <h2>Kontakt</h2>
+      <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-chevron-down logo"></span></a></button>
     </div>
-    <div id="Impressum" class="container-fluid text center">
+    <div id="Impressum" class="container-fluid text-center bg-grey container-fh">
+      <h2>Impressum</h2>
+      <button type="button" class="btn btn-default"><a href="#home"><span class="glyphicon glyphicon-chevron-up logo"></span></a></button>
     </div>
   </body>
 </html>
