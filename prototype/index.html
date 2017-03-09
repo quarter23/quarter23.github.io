@@ -16,12 +16,16 @@
   </head>
   <style>
     .jumbotron {
+      color: black;
       background-color: #5fc9f8;
       padding: 50px 50px;
       position: relative;
       margin: auto;
       height: 100vh;
-
+      background: #000 url("./img/04.jpg") center center;
+      background-size: cover;
+      opacity: 0.7;
+      margin:auto;
     }
     .container-fluid{
       background: #FFFFFF;
@@ -43,6 +47,7 @@
       margin:auto;
       margin-bottom: 0px;
       font-family: old-standard;
+      opacity: 0.4
     }
     .logo{
       font-size: 15px;
@@ -70,10 +75,19 @@
     }
     .carousel-control.left, .carousel-control.right{
       background-color: transparent;
-      background-image: none
+      background-image: none;
     }
     .aboutus{
       padding: 125px 125px;
+    }
+    .panel{
+      /*font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;*/
+      margin: 70px 0;
+      border-radius:0;
+      transition: box-shadow 0.5s;
+      overflow:auto;
     }
   </style>
   <body>
@@ -115,7 +129,15 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <h2>Vorstellung</h2>
+            <div class="row">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-4">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Panel Heading</div>
+                  <div class="panel-body">Panel Content</div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="item">
             <h2>Themen</h2>
