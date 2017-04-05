@@ -16,25 +16,28 @@
   </head>
   <style>
     .jumbotron {
+      background-color: #f4f4f2;
       color: black;
-      background-color: #5fc9f8;
-      padding: 50px 50px;
+      padding: 200px 125px;
       position: relative;
       margin: auto;
       height: 100vh;
-      background: #000 url("./img/04.jpg") center center;
-      background-size: cover;
-      opacity: 0.7;
+      /*background: #000 url("./img/04.jpg") center center;
+      background-size: cover;*/
+      opacity: 0.8;
       margin:auto;
     }
     .container-fluid{
-      background: #FFFFFF;
+      background: #f4f4f2;
       /*padding: 60px 50px;*/
       margin:auto;
       /*border-bottom: 1px solid black;*/
     }
     .container-fh{
       height: 100vh;
+    }
+    h1{
+      font-family: old-standard;
     }
     h2{
       font-family: old-standard;
@@ -45,23 +48,30 @@
     }
     .navbar{
       margin:auto;
-      margin-bottom: 0px;
+      /*margin-bottom: 0px;*/
       font-family: old-standard;
-      opacity: 0.4
+      color: #FFFFFF;
     }
     .logo{
-      font-size: 15px;
+      font-size: 30px;
+      color: #cb202d;
     }
     .nav-bgcolor{
-      background-color: #e8eded;
+      background-color: #cb202d;
+      opacity: 0.8
     }
     .navbar li a, .navbar .navbar-brand {
         color: #111111 !important;
     }
 
     .navbar-nav li a:hover, .navbar-nav li.active a {
-        color: #111111 !important;
-        background-color: #e8eded !important;
+        /*color: #111111 !important;*/
+        background-color: transparent !important;
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+        /*padding: 20px;
+        width: 200px;
+        height: 150px;*/
     }
     .bg-grey{
       background-color: #e8eded;
@@ -89,8 +99,64 @@
       transition: box-shadow 0.5s;
       overflow:auto;
     }
+    .carousel-buttons{
+      text-align: center;
+    }
+    .transition-timer-carousel-progress-bar{
+      height: 3px;
+      background-color: #cb202d;
+      width: 0%;
+      margin: 0px 0px 0px 0px;
+      border: none;
+      z-index: 11;
+      position: relative;
+    }
   </style>
-  <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="60">
+    <script>
+      $(document).ready(function(){
+        var percent = 0, bar = $('.transition-timer-carousel-progress-bar'), crsl = $('#myCarousel');
+        function progressBarCarousel(){
+          bar.css({width:percent+'%'});
+          percent = percent +0.5;
+          if (percent>100){
+            percent=0;
+            crsl.carousel('next');
+          }
+        }
+        crsl.carousel({
+          interval: false,
+          pause: true
+        }).on('slide.bs.carousel', function () {});var barInterval = setInterval(progressBarCarousel, 45);
+        /*crsl.hover(
+          function(){
+            clearInterval(barInterval);
+          },
+          function(){
+            barInterval = setInterval(progressBarCarousel, 30);
+          })*/
+
+          // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#oben']").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+        // Prevent default anchor click behavior
+          event.preventDefault();
+          // Store hash
+          var hash = this.hash;
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+            }, 900, function(){
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+          } // End if
+          });
+      });
+    </script>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid nav-bgcolor">
         <div class="navbar-header">
@@ -115,67 +181,74 @@
     </div>
     </nav>
     <div id="home" class="jumbotron text-center">
-      <h2>Jumbotron!</h2>
+      <h1>Willkommen bei BEOS PC-Systeme!</h1>
+      <button type="button" class="btn btn-default"><a href="#aboutus"><span class="glyphicon glyphicon-menu-down logo"></span></a></button>
     </div>
     <div id="aboutus" class="container-fluid text-center bg-grey aboutus container-fh">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <h2>Ihr Partner für erfolgreiche Projekte!</h2>
+      <div id="myCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-          <li data-target="#myCarousel" data-slide-to="3"></li>
+         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+         <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+         <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+         <li data-target="#myCarousel" data-slide-to="3" class="active"></li>
         </ol>
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <div class="row">
-              <div class="col-sm-4"></div>
-              <div class="col-sm-4">
-                <div class="panel panel-default">
-                  <div class="panel-heading">Panel Heading</div>
-                  <div class="panel-body">Panel Content</div>
-                </div>
-              </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">Netzwerkplanung</div>
+              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
+              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
             </div>
           </div>
           <div class="item">
-            <h2>Themen</h2>
+            <div class="panel panel-default">
+              <div class="panel-heading">Panel Heading</div>
+              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
+              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
+            </div>
           </div>
           <div class="item">
-            <h2>Text</h2>
+            <div class="panel panel-default">
+              <div class="panel-heading">Panel Heading</div>
+              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
+              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
+            </div>
           </div>
           <div class="item">
-            <h2>Text/Bild</h2>
+            <div class="panel panel-default">
+              <div class="panel-heading">Panel Heading</div>
+              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
+              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
+            </div>
           </div>
         </div>
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
-      <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-chevron-down logo"></span></a></button>
+      <center><hr class="transition-timer-carousel-progress-bar" /></center>
+      <br>
+      <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-menu-down logo"></span></a></button>
     </div>
     <div id="Leistungen" class="container-fluid text-center bg-white container-fh">
       <h2>Leistungen<h2>
-        <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-chevron-down logo"></span></a></button>
+        <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-menu-down logo"></span></a></button>
     </div>
-    <div id="Support" class="container-fluid text-center bg-grey container-fh">
-      <h2>Support ...</h2>
-      <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-chevron-down logo"></span></a></button>
+    <div id="Partner" class="container-fluid text-center bg-grey container-fh">
+      <h2>Partner</h2>
+      <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-menu-down logo"></span></a></button>
+    </div>
+    <div id="Fernwartung" class="container-fluid text-center bg-white container-fh">
+      <h2>Fernwartung</h2>
+      <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-menu-down logo"></span></a></button>
     </div>
     <div id="Kontakt" class="container-fluid text-center bg-white container-fh">
       <h2>Kontakt</h2>
-      <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-chevron-down logo"></span></a></button>
+      <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-menu-down logo"></span></a></button>
     </div>
     <div id="Impressum" class="container-fluid text-center bg-grey container-fh">
       <h2>Impressum</h2>
-      <button type="button" class="btn btn-default"><a href="#home"><span class="glyphicon glyphicon-chevron-up logo"></span></a></button>
+      <button type="button" class="btn btn-default"><a href="#home"><span class="glyphicon glyphicon-menu-up logo"></span></a></button>
     </div>
   </body>
 </html>
