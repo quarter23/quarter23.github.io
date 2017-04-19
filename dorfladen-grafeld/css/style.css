@@ -1,0 +1,31 @@
+
+.container-fluid{
+  font-family: old-standard;
+  padding: 0px 125px;
+  color: #379;
+}
+.container{
+  font-family: old-standard;
+  color: #379;
+}
+.border{
+  border-bottom: green;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+.jumbotron{
+  font-family: old-standard;
+  margin: 0px;
+  padding-left: 48px;
+  background-color: white;
+}
+.jumbotron h2{
+  padding: 25px 25px;
+}
+.navbar{
+  font-family: old-standard;
+  font-size: 18px;
+}
+h1{
+  color: black;
+}

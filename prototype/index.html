@@ -37,33 +37,35 @@
       height: 100vh;
     }
     h1{
-      font-family: old-standard;
+      /*font-family: old-standard;*/
+      font-family: cantarell, serif;
     }
     h2{
-      font-family: old-standard;
+      font-family: courier new, serif;
+    }
+    h3{
+      font-family: courier new, serif;
     }
     h4{
-      font-family: old-standard;
+      font-family: courier new, serif;
       font-style: oblique;
     }
     .navbar{
       margin:auto;
       /*margin-bottom: 0px;*/
-      font-family: old-standard;
-      color: #FFFFFF;
+      font-family: courier new;
     }
     .logo{
       font-size: 30px;
-      color: #cb202d;
+      /*color: #cb202d;*/
+      color: black;
     }
     .nav-bgcolor{
-      background-color: #cb202d;
-      opacity: 0.8
+      background-color: #FFF;
     }
     .navbar li a, .navbar .navbar-brand {
         color: #111111 !important;
     }
-
     .navbar-nav li a:hover, .navbar-nav li.active a {
         /*color: #111111 !important;*/
         background-color: transparent !important;
@@ -83,80 +85,18 @@
       background-color: transparent;
       border-width: 0px;
     }
-    .carousel-control.left, .carousel-control.right{
-      background-color: transparent;
-      background-image: none;
-    }
     .aboutus{
       padding: 125px 125px;
     }
-    .panel{
-      /*font-size: 19px;
-      line-height: 1.375em;
-      font-weight: 400;*/
-      margin: 70px 0;
-      border-radius:0;
-      transition: box-shadow 0.5s;
-      overflow:auto;
+    .text-big{
+      text-transform: uppercase;
     }
-    .carousel-buttons{
-      text-align: center;
-    }
-    .transition-timer-carousel-progress-bar{
-      height: 3px;
-      background-color: #cb202d;
-      width: 0%;
-      margin: 0px 0px 0px 0px;
-      border: none;
-      z-index: 11;
-      position: relative;
+    .text{
+      font-family: courier new, serif;
+      font-size: 20px;
     }
   </style>
   <body data-spy="scroll" data-target=".navbar" data-offset="60">
-    <script>
-      $(document).ready(function(){
-        var percent = 0, bar = $('.transition-timer-carousel-progress-bar'), crsl = $('#myCarousel');
-        function progressBarCarousel(){
-          bar.css({width:percent+'%'});
-          percent = percent +0.5;
-          if (percent>100){
-            percent=0;
-            crsl.carousel('next');
-          }
-        }
-        crsl.carousel({
-          interval: false,
-          pause: true
-        }).on('slide.bs.carousel', function () {});var barInterval = setInterval(progressBarCarousel, 45);
-        /*crsl.hover(
-          function(){
-            clearInterval(barInterval);
-          },
-          function(){
-            barInterval = setInterval(progressBarCarousel, 30);
-          })*/
-
-          // Add smooth scrolling to all links in navbar + footer link
-        $(".navbar a, footer a[href='#oben']").on('click', function(event) {
-
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-        // Prevent default anchor click behavior
-          event.preventDefault();
-          // Store hash
-          var hash = this.hash;
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-            }, 900, function(){
-              // Add hash (#) to URL when done scrolling (default click behavior)
-              window.location.hash = hash;
-            });
-          } // End if
-          });
-      });
-    </script>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid nav-bgcolor">
         <div class="navbar-header">
@@ -165,7 +105,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Prototype</a>
+          <a class="navbar-brand" href="#">BEOS PC-Systeme</a>
         </div>
         <div class="collapse navbar-collapse" id="menu">
         <ul class="nav navbar-nav navbar-right">
@@ -184,55 +124,18 @@
       <h1>Willkommen bei BEOS PC-Systeme!</h1>
       <button type="button" class="btn btn-default"><a href="#aboutus"><span class="glyphicon glyphicon-menu-down logo"></span></a></button>
     </div>
-    <div id="aboutus" class="container-fluid text-center bg-grey aboutus container-fh">
-      <h2>Ihr Partner für erfolgreiche Projekte!</h2>
-      <div id="myCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-         <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
-         <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
-         <li data-target="#myCarousel" data-slide-to="3" class="active"></li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <div class="panel panel-default">
-              <div class="panel-heading">Netzwerkplanung</div>
-              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
-              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="panel panel-default">
-              <div class="panel-heading">Panel Heading</div>
-              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
-              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="panel panel-default">
-              <div class="panel-heading">Panel Heading</div>
-              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
-              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="panel panel-default">
-              <div class="panel-heading">Panel Heading</div>
-              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
-              <div class="panel-body">Panel Content<br>Platzhalter<br><br></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <center><hr class="transition-timer-carousel-progress-bar" /></center>
+    <div id="aboutus" class="container-fluid text-center bg-grey aboutus container-fh text">
+      <h2>„Die kürzeste Antwort auf etwas ist es einfach zu tun.“</h2>
+      <h4>Ernest Hemingway</h4>
       <br>
+      Wir finden für jedes Problem die passende Lösung!<br>
       <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-menu-down logo"></span></a></button>
     </div>
     <div id="Leistungen" class="container-fluid text-center bg-white container-fh">
-      <h2>Leistungen<h2>
-        <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-menu-down logo"></span></a></button>
+      <h2>Leistungen</h2>
+
+
+      <button type="button" class="btn btn-default"><a href="#Leistungen"><span class="glyphicon glyphicon-menu-down logo"></span></a></button>
     </div>
     <div id="Partner" class="container-fluid text-center bg-grey container-fh">
       <h2>Partner</h2>
